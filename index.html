@@ -8,25 +8,39 @@
     <title>Document</title>
 </head>
 <body>
+<h1>OUTPUT</h1>
+<ouput id="output" width="800"></ouput>
 
-<canvas id="canvas" width="800" height="800"></canvas>
-
+<canvas id="canvas" width="800"></canvas>
 
 <script>
-    function start() {
-        alert('prova');
+
+    function report(newContent){
+        var output = document.getElementById('output')
+        output.innerHTML += newContent;
+
     }
-    function end() {
+    function start(){
+        report('Start')
     }
-    function mode() {
+    function move(){
+        report('Move')
+
     }
-    function init(){
-        var canvas = this.getElementById('canvas');
+    function end(){
+        report('End')
+
+    }
+    function init() {
+        var canvas = document.getElementById('canvas');
+
         canvas.addEventListener('touchstart', start(), false);
-        canvas.addEventListener('touchend', end(), false);
-        canvas.addEventListener('touchmode', mode(), false);
+        canvas.addEventListener('touchstart', move(), false);
+        canvas.addEventListener('touchstart', end(), false);
+
     }
-    initi();
+
+    init();
 </script>
 </body>
 </html>
