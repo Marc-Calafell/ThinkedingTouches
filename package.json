@@ -1,0 +1,20 @@
+{
+  "name": "ThinkedingTouches",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marc-Calafell/ThinkedingTouches.git"
+  },
+  "keywords": [],
+  "author": "MarcCalafell (marccalafell.tk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marc-Calafell/ThinkedingTouches/issues"
+  },
+  "homepage": "https://github.com/Marc-Calafell/ThinkedingTouches#readme"
+}
