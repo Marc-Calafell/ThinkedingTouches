@@ -9,27 +9,44 @@
 </head>
 <body>
 
-<div id="zone"></div>
+<div id="zone" style="width: 400px; height: 400px; border: 1px black solid"></div>
 
-<script src="node_modules/hammerjs/hammer.min.js">
+<h1>OUTPUT:</h1>
+<output id="output"></output>
 
-var zone = document.getElementById('ZONE')
-var hammerZone = new Hammer(zone);
-hammerZone.on{
-    'swiperRight', function (e) {
-        e.preventDefault();
-        console.log('Right')
+<script src="js/hammer.js"></script>
+<script>
 
-    }.on{
-        'swiperLeft', function (e) {
-            e.preventDefault();
-            console.log('Left')
-        }
-
-
+    function delayedInnerHTML(newContent) {
+        output.innerHTML += newContent;
     }
-}
-</script>
 
+    function report(newContent) {
+        var output = document.getElementById('output');
+        setTimeout(function() { delayedInnerHTML(newContent) }, 100);
+    }
+
+    // Swipe left sobre el div zone --> console.log()
+    // Swipe right sobre el div zone --> console.log()
+
+    var zone = document.getElementById('zone');
+
+    var hammerZone = new Hammer(zone);
+
+    hammerZone.on(
+            'swiperight', function (e) {
+                e.preventDefault();
+                console.log('Swipe Right');
+                report('Swipe Right<br>');
+            }
+    ).on(
+            'swipeleft', function (e) {
+                e.preventDefault();
+                console.log('Swipe Left');
+                report('Swipe Left<br>');
+            }
+    )
+
+</script>
 </body>
 </html>
