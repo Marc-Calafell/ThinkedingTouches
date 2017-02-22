@@ -9,43 +9,43 @@
 </head>
 <body>
 
-<div id="zone" style="width: 400px; height: 400px; border: 1px black solid"></div>
-
-<h1>OUTPUT:</h1>
+<h2>Output</h2>
 <output id="output"></output>
 
-<script src="js/hammer.js"></script>
+<div id="zone" style="border: 1px solid black;background-color: lightsalmon; height: 600px; width: 600px"></div>
+
+<script src="./node_modules/hammerjs/hammer.min.js"></script>
 <script>
 
-    function delayedInnerHTML(newContent) {
+    function delayedInnerHtml(newContent) {
         output.innerHTML += newContent;
     }
 
     function report(newContent) {
         var output = document.getElementById('output');
-        setTimeout(function() { delayedInnerHTML(newContent) }, 100);
+        setTimeout(function() { delayedInnerHtml(newContent) }, 100);
+
     }
 
-    // Swipe left sobre el div zone --> console.log()
-    // Swipe right sobre el div zone --> console.log()
+    var zona = document.getElementById('zone');
 
-    var zone = document.getElementById('zone');
-
-    var hammerZone = new Hammer(zone);
+    // Swipe left sobre div zone --> console.log
+    var hammerZone = new Hammer(zona);
 
     hammerZone.on(
-            'swiperight', function (e) {
-                e.preventDefault();
-                console.log('Swipe Right');
-                report('Swipe Right<br>');
-            }
-    ).on(
-            'swipeleft', function (e) {
-                e.preventDefault();
-                console.log('Swipe Left');
-                report('Swipe Left<br>');
-            }
-    )
+        'swiperight', function(e) {
+            e.preventDefault();
+            report('Swipe right');
+        }
+    );
+
+    // Swipe right sobre div zone --> console.log
+    hammerZone.on(
+        'swipeleft', function(e) {
+            e.preventDefault();
+            report('Swipe left');
+        }
+    );
 
 </script>
 </body>

@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidmgilo/TinkeringTouches.git"
+    "url": "git+https://github.com/francauxach/TinkeringTouches.git"
   },
   "keywords": [],
-  "author": "David <davidmgilo@gmail.com> (https://github.com/davidmgilo)",
+  "author": "Franc <frankky96@gmail.com> (https://github.com/francauxach)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/davidmgilo/TinkeringTouches/issues"
+    "url": "https://github.com/francauxach/TinkeringTouches/issues"
   },
-  "homepage": "https://github.com/davidmgilo/TinkeringTouches#readme",
+  "homepage": "https://github.com/francauxach/TinkeringTouches#readme",
   "dependencies": {
     "hammerjs": "^2.0.8"
   }
